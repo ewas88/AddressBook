@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <style>
+            body, div, p, a {
+                font-family: "Raleway", sans-serif
+            }
+
+            .ex1 {
+                margin: 1cm 8cm 0cm 8cm;
+            }
+
+            .ex2 {
+                margin: 3cm 8cm 0cm 8cm;
+            }
+
+            .ex3 {
+                margin: 4cm auto auto 11cm;
+            }
+
+            .ex4 {
+                margin: 1cm 3cm 0cm auto;
+            }
+
+            .pattern {
+                background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/swirl_pattern.png");
+                background-repeat: repeat;
+            }
+
+        </style>
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+</head>
+<div class="w3-container w3-teal w3-center">
+    <h1>ADDRESS BOOK</h1>
+</div>
+<body class="w3-container pattern ex1">
+
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+
 </html>

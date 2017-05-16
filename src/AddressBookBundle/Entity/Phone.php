@@ -3,6 +3,7 @@
 namespace AddressBookBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Phone
@@ -12,6 +13,30 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Phone
 {
+    /**
+     * @ORM\OneToMany(targetEntity="Person", mappedBy="phone")
+     */
+    private $persons;
+    public function __construct() {
+        $this->persons = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPersons()
+    {
+        return $this->persons;
+    }
+
+    /**
+     * @param mixed $persons
+     */
+    public function setPersons($persons)
+    {
+        $this->persons = $persons;
+    }
+
     /**
      * @var int
      *

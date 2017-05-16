@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} {{ 'Add new email' }} {% endblock %}
+
+{% block body %}
+    <h3 class="w3-container w3-khaki">Add or modify email for {{ person.name}} {{  person.surname}}</h3>
+    <div>
+    <form action="#" method="POST">
+        <p>
+            <b>Email:</b> <input type="email" name="email_address" required><br>
+        </p>
+        <p>
+            <b>Type:</b>
+            <select name="type">
+                <option value="private">Private</option>
+                <option value="work">Corporate</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" class="w3-button w3-grey w3-padding-large" name="send" value="Add">
+        </p>
+    </form>
+        <a href="/{{ person.id }}/modify" class="w3-button w3-teal w3-padding-large">Go back</a>
+    </div>
+
+{% endblock %}

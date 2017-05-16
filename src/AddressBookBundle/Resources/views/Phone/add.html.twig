@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} {{ 'Add new phone' }} {% endblock %}
+
+{% block body %}
+    <h3 class="w3-container w3-khaki">Add or modify phone for {{ person.name}} {{  person.surname}}</h3>
+    <div>
+    <form action="#" method="POST">
+        <p>
+            <b>Number:</b> <input type="number" name="phone_number" required><br>
+        </p>
+        <p>
+            <b>Type:</b>
+            <select name="type">
+                <option value="cell">Cell Phone</option>
+                <option value="home">Home Phone</option>
+                <option value="work">Work Phone</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" class="w3-button w3-grey w3-padding-large" name="send" value="Add">
+        </p>
+    </form>
+        <a href="/{{ person.id }}/modify" class="w3-button w3-teal w3-padding-large">Go back</a>
+    </div>
+
+{% endblock %}

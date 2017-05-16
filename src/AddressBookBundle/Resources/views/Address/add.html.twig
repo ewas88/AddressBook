@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} {{ 'Add new address' }} {% endblock %}
+
+{% block body %}
+    <h3 class="w3-container w3-khaki">Add or modify address for {{ person.name}} {{  person.surname}}</h3>
+    <div>
+    <form action="#" method="POST">
+        <p>
+            <b>City:</b> <input type="text" name="city" required><br>
+        </p>
+        <p>
+            <b>Street:</b> <input type="text" name="street" required><br>
+        </p>
+        <p>
+            <b>House number:</b> <input type="number" name="house_number" required><br>
+        </p>
+        <p>
+            <b>Flat number:</b> <input type="number" name="flat_number"><br>
+        </p>
+        <p>
+            <input type="submit" class="w3-button w3-grey w3-padding-large" name="send" value="Add">
+        </p>
+    </form>
+        <a href="/{{ person.id }}/modify" class="w3-button w3-teal w3-padding-large">Go back</a>
+    </div>
+
+{% endblock %}

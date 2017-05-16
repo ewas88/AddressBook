@@ -1,0 +1,42 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} {{ 'Modify a person' }} {% endblock %}
+
+{% block body %}
+    <div class="w3-display-topleft w3-container ex2">
+        <h3 class="w3-container w3-grey">Modify details for {{ person.name}} {{  person.surname}}</h3>
+        <h4 class="w3-container w3-grey">Input all information</h4>
+
+            <form action="#" method="POST">
+                <p>
+                    <b>Name:</b> <input type="text" name="name" required><br>
+                </p>
+                <p>
+                    <b>Surname:</b> <input type="text" name="surname" required><br>
+                </p>
+                <p>
+                    <b>Description:</b> <input type="text" name="description" required><br>
+                </p>
+                <p>
+                    <input class="w3-button w3-grey" type="submit" name="send" value="Modify">
+                </p>
+            </form>
+
+        <form action="/{{ person.id }}/addAddress" method="GET">
+            <p>
+            <button class="w3-button w3-black">Add/Modify address</button>
+            </p>
+        </form>
+        <form action="/{{ person.id }}/addEmail" method="GET">
+            <p>
+            <button class="w3-button w3-black">Add/Modify email</button>
+            </p>
+        </form>
+        <form action="/{{ person.id }}/addPhone" method="GET">
+            <p>
+            <button class="w3-button w3-black">Add/Modify phone</button>
+            </p>
+        </form>
+        <a href="/{{ person.id }}" class="w3-button w3-teal w3-padding-large">Go back</a>
+    </div>
+{% endblock %}

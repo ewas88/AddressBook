@@ -1,0 +1,69 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} {{ 'Show one person' }} {% endblock %}
+
+{% block body %}
+    <h3 class="w3-container w3-khaki">Details of {{ person.name }} {{ person.surname }}</h3>
+     <div class="w3-container w3-lime" style="font-size: x-large">
+        <p>
+            <b>GENERAL</b>
+        </p>
+        <p>
+            Name: {{ person.name }}<br>
+        </p>
+        <p>
+            Surname: {{ person.surname }}<br>
+        </p>
+        <p>
+            Description: {{ person.description }}<br>
+        </p>
+
+        {% if person.address is not empty %}
+            <p>
+                <b>ADDRESS</b>
+            </p>
+            <p>
+                City: {{ person.address.city }}<br>
+            </p>
+            <p>
+                Street: {{ person.address.street }}<br>
+            </p>
+            <p>
+                House Number: {{ person.address.houseNumber }}<br>
+            </p>
+            <p>
+                Flat Number: {{ person.address.flatNumber }}<br>
+            </p>
+        {% endif %}
+
+        {% if person.phone is not empty %}
+            <p>
+                <b>PHONE</b>
+            </p>
+            <p>
+                Phone Number: {{ person.phone.number }}<br>
+            </p>
+            <p>
+                Phone Type: {{ person.phone.type }}<br>
+            </p>
+        {% endif %}
+
+        {% if person.email is not empty %}
+            <p>
+                <b>EMAIL</b>
+            </p>
+            <p>
+                Email Address: {{ person.email.emailAddress }}<br>
+            </p>
+            <p>
+                Email Type: {{ person.email.emailType }}<br>
+            </p>
+        {% endif %}
+
+    </div>
+    <p>
+        <a href="/{{ person.id }}/modify" class="w3-button w3-black w3-hover-green w3-padding-large">Modify</a>
+        <a href="/" class="w3-button w3-teal w3-padding-large">Main Page</a>
+    </p>
+
+{% endblock %}
