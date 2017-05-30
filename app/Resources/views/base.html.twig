@@ -30,6 +30,10 @@
                 background-repeat: repeat;
             }
 
+            .ex5 {
+                margin: 4cm 3cm 0cm auto;
+            }
+
         </style>
     {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,9 +45,17 @@
     <h1>ADDRESS BOOK</h1>
 </div>
 <body class="w3-container pattern ex1">
-
+{% if is_granted('ROLE_USER') %}
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
+{% else %}
+    <div class="w3-display-middle">
+<a href="{{ path('fos_user_security_login')}}" style="font-size:20px"
+   class="w3-button w3-black w3-padding-32">Log in</a>
+<a href="{{ path('fos_user_registration_register') }}" style="font-size:20px"
+   class="w3-button w3-black w3-padding-32">Sign in</a>
+    </div>
+{% endif %}
 </body>
 
 </html>

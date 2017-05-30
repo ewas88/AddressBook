@@ -11,9 +11,30 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="person")
  * @ORM\Entity(repositoryClass="AddressBookBundle\Repository\PersonRepository")
+ *
  */
 class Person
 {
+    /**
+     * @ORM\ManyToOne(targetEntity="AddressBookBundle\Entity\User", inversedBy="persons")
+     */
+    private $user;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
 
     /**
      * @return mixed
@@ -30,6 +51,7 @@ class Person
     {
         $this->address = $address;
     }
+
     /**
      * @ORM\ManyToOne(targetEntity="Address", inversedBy="persons")
      * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
@@ -119,7 +141,7 @@ class Person
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -142,7 +164,7 @@ class Person
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -165,7 +187,7 @@ class Person
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
     public function getSurname()
     {
@@ -188,7 +210,7 @@ class Person
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {

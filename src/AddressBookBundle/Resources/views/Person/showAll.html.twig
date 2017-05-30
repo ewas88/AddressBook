@@ -3,15 +3,18 @@
 {% block title %} {{ 'All people' }} {% endblock %}
 
 {% block body %}
-    <a href="/new" style="font-size:20px"
-       class=" w3-button w3-black w3-display-topright w3-padding-32 ex4">Add new person</a>
+
+    <a href="/book/new" style="font-size:20px"
+       class="w3-button w3-black w3-display-topright w3-padding-32 ex4">Add new person</a>
+    <a href="{{ path('fos_user_security_logout') }}" style="font-size:20px; float: right"
+       class="w3-button w3-black w3-display-topright w3-padding-32 ex5">Log out</a>
     <h3 class="w3-container w3-grey">ALL CONTACTS</h3>
     <div class="w3-container w3-lime" style="font-size: x-large">
         {% for person in persons %}
             <p>
-                <a href="/{{ person.id }}">{{ person.name }}</a> {{ person.surname }} &nbsp
-                <a href="/{{ person.id }}/modify" class="w3-button w3-black w3-hover-green w3-padding-small">Modify</a>
-                <a href="/{{ person.id }}/delete" class="w3-button w3-black w3-hover-red w3-padding-small">Remove</a>
+                <a href="{{ person.id }}">{{ person.name }}</a> {{ person.surname }} &nbsp
+                <a href="{{ person.id }}/modify" class="w3-button w3-black w3-hover-green w3-padding-small">Modify</a>
+                <a href="{{ person.id }}/delete" class="w3-button w3-black w3-hover-red w3-padding-small">Remove</a>
             </p>
         {% endfor %}
     </div>

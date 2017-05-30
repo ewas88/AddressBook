@@ -5,7 +5,7 @@
 {% block body %}
     <h3 class="w3-container w3-khaki">ADD NEW PERSON TO THE BOOK</h3>
     <div class="w3-third">
-    <form action="/new" method="POST" enctype="multipart/form-data">
+    <form action="/book/new" method="POST" enctype="multipart/form-data">
         <p>
             Name: <input type="text" name="name" required><br>
         </p>
@@ -16,14 +16,11 @@
             Description: <input type="text" name="description" required><br>
         </p>
         <p>
-            Upload photo: <input type="file" name="photo"><br>
-        </p>
-        <p>
             <input type="submit" class="w3-button w3-grey w3-padding-large" name="send" value="Add">
         </p>
 
     </form>
-        <a href="/" class="w3-button w3-teal w3-padding-large">Main Page</a>
+        <a href="/book" class="w3-button w3-teal w3-padding-large">Main Page</a>
     </div>
 
 {% endblock %}

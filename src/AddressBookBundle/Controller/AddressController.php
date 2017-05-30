@@ -10,8 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
-
+/**
+ * @Route("/book")
+ * @Security("is_granted('ROLE_USER')")
+ */
 class AddressController extends Controller
 {
     /**

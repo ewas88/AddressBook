@@ -10,7 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
+/**
+ * @Route("/book")
+ * @Security("is_granted('ROLE_USER')")
+ */
 class PersonController extends Controller
 {
     /**
@@ -40,7 +45,7 @@ class PersonController extends Controller
         $person->setName($name);
         $person->setSurname($surname);
         $person->setDescription($description);
-        $person->setPhoto("No");
+        $person->setUser($this->getUser());
 
         $em->persist($person);
         $em->flush();
@@ -139,9 +144,10 @@ class PersonController extends Controller
      */
     public function showAllPeopleAction()
     {
+
         /** @var PersonRepository $personRepository */
         $personRepository = $this->getDoctrine()->getRepository('AddressBookBundle:Person');
-        $persons = $personRepository->getAllPeople();
+        $persons = $personRepository->findByUser($this->getUser()->getId());
 
         if (!$persons) {
             $persons = [];
