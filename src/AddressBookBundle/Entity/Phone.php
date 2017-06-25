@@ -17,25 +17,6 @@ class Phone
      * @ORM\OneToMany(targetEntity="Person", mappedBy="phone")
      */
     private $persons;
-    public function __construct() {
-        $this->persons = new ArrayCollection();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPersons()
-    {
-        return $this->persons;
-    }
-
-    /**
-     * @param mixed $persons
-     */
-    public function setPersons($persons)
-    {
-        $this->persons = $persons;
-    }
 
     /**
      * @var int
@@ -60,11 +41,31 @@ class Phone
      */
     private $type;
 
+    public function __construct()
+    {
+        $this->persons = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPersons()
+    {
+        return $this->persons;
+    }
+
+    /**
+     * @param mixed $persons
+     */
+    public function setPersons($persons)
+    {
+        $this->persons = $persons;
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -87,7 +88,7 @@ class Phone
     /**
      * Get number
      *
-     * @return integer 
+     * @return integer
      */
     public function getNumber()
     {
@@ -110,7 +111,7 @@ class Phone
     /**
      * Get type
      *
-     * @return string 
+     * @return string
      */
     public function getType()
     {

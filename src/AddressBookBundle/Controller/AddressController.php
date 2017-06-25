@@ -35,7 +35,7 @@ class AddressController extends Controller
      * @Template("AddressBookBundle:Person:modify.html.twig")
      * @Method("POST")
      */
-    public function addAddressDBAction(Request $request, $id)
+    public function newAddressAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 

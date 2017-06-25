@@ -35,7 +35,7 @@ class EmailController extends Controller
      * @Template("AddressBookBundle:Person:modify.html.twig")
      * @Method("POST")
      */
-    public function addEmailDBAction(Request $request, $id)
+    public function newEmailAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 

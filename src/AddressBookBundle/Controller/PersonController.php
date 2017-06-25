@@ -60,7 +60,7 @@ class PersonController extends Controller
      * @Template("AddressBookBundle:Person:modify.html.twig")
      * @Method("GET")
      */
-    public function modifyPersonAction($id)
+    public function editPersonAction($id)
     {
         $personRepository = $this->getDoctrine()->getRepository('AddressBookBundle:Person');
         $person = $personRepository->find($id);
@@ -72,7 +72,7 @@ class PersonController extends Controller
      * @Template("AddressBookBundle:Person:showOne.html.twig")
      * @Method("POST")
      */
-    public function modifyDBPersonAction(Request $request, $id)
+    public function modifyPersonAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 

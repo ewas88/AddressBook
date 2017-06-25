@@ -652,3 +652,17 @@ abb301,127.0.0.1,GET,http://localhost:8000/book,1496171017,,301
 6b1d58,127.0.0.1,GET,http://localhost:8000/book/,1496171017,,200
 8ce082,127.0.0.1,GET,http://localhost:8000/book/9/modify,1496171021,,200
 440d28,127.0.0.1,GET,http://localhost:8000/book/9,1496171023,,200
+9ba25d,127.0.0.1,GET,http://localhost:8000/,1497078410,,200
+a5d6fb,127.0.0.1,GET,http://localhost:8000/book,1497078414,,301
+1b325b,127.0.0.1,GET,http://localhost:8000/book/,1497078414,,200
+84ce52,127.0.0.1,GET,http://localhost:8000/book/9,1497078419,,200
+b6b69f,127.0.0.1,GET,http://localhost:8000/book,1497078810,,301
+55b19a,127.0.0.1,GET,http://localhost:8000/book/,1497078810,,200
+64afd2,127.0.0.1,GET,http://localhost:8000/logout,1497078811,,302
+d22552,127.0.0.1,GET,http://localhost:8000/,1497078811,,200
+3a1ae8,127.0.0.1,GET,http://localhost:8000/login,1497078813,,200
+a6e96a,127.0.0.1,POST,http://localhost:8000/login_check,1497078821,,302
+bfc3ed,127.0.0.1,GET,http://localhost:8000/,1497078821,,200
+86a236,127.0.0.1,GET,http://localhost:8000/book,1497078822,,301
+1b0920,127.0.0.1,GET,http://localhost:8000/book/,1497078822,,200
+2142ae,127.0.0.1,GET,http://localhost:8000/book/new,1497078828,,200

@@ -17,25 +17,6 @@ class Address
      * @ORM\OneToMany(targetEntity="Person", mappedBy="address")
      */
     private $persons;
-    public function __construct() {
-        $this->persons = new ArrayCollection();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPersons()
-    {
-        return $this->persons;
-    }
-
-    /**
-     * @param mixed $persons
-     */
-    public function setPersons($persons)
-    {
-        $this->persons = $persons;
-    }
 
     /**
      * @var int
@@ -74,11 +55,31 @@ class Address
      */
     private $flatNumber;
 
+    public function __construct()
+    {
+        $this->persons = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPersons()
+    {
+        return $this->persons;
+    }
+
+    /**
+     * @param mixed $persons
+     */
+    public function setPersons($persons)
+    {
+        $this->persons = $persons;
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -101,7 +102,7 @@ class Address
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
@@ -124,7 +125,7 @@ class Address
     /**
      * Get street
      *
-     * @return string 
+     * @return string
      */
     public function getStreet()
     {
@@ -147,7 +148,7 @@ class Address
     /**
      * Get houseNumber
      *
-     * @return integer 
+     * @return integer
      */
     public function getHouseNumber()
     {
@@ -170,7 +171,7 @@ class Address
     /**
      * Get flatNumber
      *
-     * @return integer 
+     * @return integer
      */
     public function getFlatNumber()
     {

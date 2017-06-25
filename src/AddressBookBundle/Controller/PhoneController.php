@@ -35,7 +35,7 @@ class PhoneController extends Controller
      * @Template("AddressBookBundle:Person:modify.html.twig")
      * @Method("POST")
      */
-    public function addPhoneDBAction(Request $request, $id)
+    public function newPhoneAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 

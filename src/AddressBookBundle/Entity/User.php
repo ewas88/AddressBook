@@ -18,6 +18,16 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="AddressBookBundle\Entity\Person", mappedBy="user")
+     */
+    private $persons;
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
      * @return mixed
      */
     public function getPersons()
@@ -32,18 +42,6 @@ class User extends BaseUser
     {
         $this->persons = $persons;
     }
-
-    /**
-     * @ORM\OneToMany(targetEntity="AddressBookBundle\Entity\Person", mappedBy="user")
-     */
-    private $persons;
-
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-
 
 }
 

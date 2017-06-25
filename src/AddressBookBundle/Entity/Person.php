@@ -21,6 +21,24 @@ class Person
     private $user;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Address", inversedBy="persons")
+     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
+     */
+    private $address;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Email", inversedBy="persons")
+     * @ORM\JoinColumn(name="email_id", referencedColumnName="id")
+     */
+    private $email;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Phone", inversedBy="persons")
+     * @ORM\JoinColumn(name="phone_id", referencedColumnName="id")
+     */
+    private $phone;
+
+    /**
      * @return mixed
      */
     public function getUser()
@@ -51,24 +69,6 @@ class Person
     {
         $this->address = $address;
     }
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Address", inversedBy="persons")
-     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
-     */
-    private $address;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Email", inversedBy="persons")
-     * @ORM\JoinColumn(name="email_id", referencedColumnName="id")
-     */
-    private $email;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Phone", inversedBy="persons")
-     * @ORM\JoinColumn(name="phone_id", referencedColumnName="id")
-     */
-    private $phone;
 
     /**
      * @return mixed

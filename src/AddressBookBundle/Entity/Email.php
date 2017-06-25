@@ -17,25 +17,7 @@ class Email
      * @ORM\OneToMany(targetEntity="Person", mappedBy="email")
      */
     private $persons;
-    public function __construct() {
-        $this->persons = new ArrayCollection();
-    }
 
-    /**
-     * @return mixed
-     */
-    public function getPersons()
-    {
-        return $this->persons;
-    }
-
-    /**
-     * @param mixed $persons
-     */
-    public function setPersons($persons)
-    {
-        $this->persons = $persons;
-    }
 
     /**
      * @var int
@@ -60,11 +42,31 @@ class Email
      */
     private $emailType;
 
+    public function __construct()
+    {
+        $this->persons = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPersons()
+    {
+        return $this->persons;
+    }
+
+    /**
+     * @param mixed $persons
+     */
+    public function setPersons($persons)
+    {
+        $this->persons = $persons;
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -87,7 +89,7 @@ class Email
     /**
      * Get emailAddress
      *
-     * @return string 
+     * @return string
      */
     public function getEmailAddress()
     {
@@ -110,7 +112,7 @@ class Email
     /**
      * Get emailType
      *
-     * @return string 
+     * @return string
      */
     public function getEmailType()
     {
